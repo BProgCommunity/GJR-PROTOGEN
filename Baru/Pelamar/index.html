@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Genesyss</title>
-        <link rel="stylesheet" href="boostrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="font/ttf">
-        <script src="boostrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
+        <script src="../boostrap/js/bootstrap.min.js"></script>
         <style>
             .centered-image {
                 margin-top: 40px;
@@ -37,46 +38,36 @@
         </style>
     </head>
     <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 text-center">
-                    <img src="assets/Genesyss.svg" alt="Centered Image" class="img-fluid mx-auto centered-image">
-                </div>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-home"></i> <!-- Font Awesome icon -->
+                Fixed Bottom Navbar
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 text-center">
-                    <img src="assets/a3.svg" alt="Centered Image" class="img-fluid mx-auto centered-image">
-                    <p class="text-center centered-text">Mari Meroket Bersama Kami</p>
-                </div>
-            </div>
-        </div>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <a href="Perusahaan/login.html" class="col-sm-6 custom-col-sm-6 center-card">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text text-center centered-text">Perusahaan</p>
-                    </div>
-                    <img class="card-img-top" src="assets/a1.svg" alt="Card image">
-                </div>
-            </a>
-            <a href="Pelamar/login.html" class="col-sm-6 custom-col-sm-6 center-card">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text text-center centered-text">Pelamar</p>
-                    </div>
-                    <img class="card-img-top" src="assets/a4.svg" alt="Card image">
-                </div>
-            </a>
-        </div>
+  <div class="container">
+        <!-- Your page content goes here -->
     </div>
 
 
