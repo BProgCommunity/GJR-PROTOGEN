@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <img src="../assets/a5.svg" alt="Centered Image" class="img-fluid mx-auto centered-image-2">
+                <img src="../assets/a2.svg" alt="Centered Image" class="img-fluid mx-auto centered-image-2">
             </div>
         </div>
     </div>
@@ -53,27 +53,36 @@
     <div class="row"><div class="row">
         <div class="col-md-12">
             <div class="login-container">
-              <p class="card-text text-center centered-text">MASUK</p>
+              <p class="card-text text-center centered-text">DAFTARKAN DIRI ANDA</p>
                 <form action="index.html" method="POST">
+                  <div class="mb-3">
+                      <input type="text" class="form-control" id="namadepan" placeholder="Nama Depan" required>
+                  </div>
+                  <div class="mb-3">
+                      <input type="text" class="form-control" id="namabelakang" placeholder="Nama belakang" required>
+                  </div>
                     <div class="mb-3">
-
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                     </div>
                     <div class="mb-3">
-
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="number" class="form-control" id="nohandphone" placeholder="No Handphone" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success" style="background-color: #38AA93;border-color: #38AA93;width:100%;">Login</button>
+                        <button type="submit" class="btn btn-success" style="background-color: #38AA93;border-color: #38AA93;width:100%;">Daftar</button>
                         <div style="margin-top: 10px;"></div>
-                        <a href="../index.html">
+                        <a href="login.html">
                           <button type="button" class="btn btn-light" style="color: #38AA93;border-color: #38AA93;width:100%;">Kembali</button>
                         </a>
                     </div>
                 </form>
                 <div style="margin-top: 40px;"></div>
-                <p class="text-center" style="font-size: 10px; font-family: Roboto-Bold;margin:0px;">Lupa Password? <span > <a href="forgetpassword.html" style="color: #38AA93;">Pulihkan</a></span></p>
-                <p class="text-center" style="font-size: 10px; font-family: Roboto-Bold;margin:0px;">Belum Punya Akun? <span ><a href="register.html" style="color: #38AA93;">Daftar</a></span></p>
+
             </div>
         </div>
     </div>
