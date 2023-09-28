@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Genesyss</title>
     <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
@@ -10,26 +11,34 @@
     <script src="../boostrap/js/bootstrap.min.js"></script>
     <style>
         /* Style for the fixed bottom navbar */
-        .fixed-bottom-navbar {
+        .buttom-panel {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: #38AA93; /* Change the background color as needed */
-            color: #ffffff; /* Change the text color as needed */
-            padding: 10px; /* Add padding to adjust the height */
-            justify-content: center;
-        }
-
-        /* Style for the horizontal menu */
-        .horizontal-menu {
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 5px;
             display: flex;
-            justify-content: center; /* Center-align the menu items horizontally */
-            list-style: none;
-            padding: 0;
-            margin: 0; /* Remove margin for the list */
+            align-items: center;
+            justify-content: space-between;
         }
 
+        @media (max-width: 768px) {
+            /* Style for the navbar on smaller screens (bottom position) */
+            .buttom-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        }
         /* Style for the horizontal menu items */
         .horizontal-menu-item {
             margin: 0;
@@ -40,100 +49,194 @@
             text-align: center; /* Center-align the text */
         }
 
+        /* Style for the header panel */
         .header-panel {
-            background-color: #38AA93; /* Change the background color as needed */
-            color: #ffffff; /* Change the text color as needed */
-            padding: 20px; /* Increase padding to make header panel bigger */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 20px;
             display: flex;
-            align-items: center; /* Vertically center-align content */
-            justify-content: space-between; /* Space between profile and icons */
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Style for the circular profile picture container */
-        .profile-container {
+        /* Style for the horizontal menu */
+        .horizontal-menu {
             display: flex;
-            align-items: center; /* Vertically center-align content */
+            justify-content: space-between; /* Center-align and space-between items */
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        /* Style for the circular profile picture */
-        .profile-picture {
-            width: 70px; /* Set the width and height of the circle */
-            height: 70px;
-            border-radius: 50%; /* Create a circular shape */
-            overflow: hidden; /* Clip the image to the circular frame */
-            margin-right: 20px; /* Add margin to separate from text */
+        /* Style for left text in the header */
+        .left-text {
+            margin-right: auto; /* Push the text to the left */
         }
 
-        .profile-picture img {
-            width: 100%; /* Make the image fill the circular frame */
-            height: 100%;
-            object-fit: cover; /* Maintain aspect ratio while covering the frame */
-        }
-
-        .profile-info {
+        /* Style for the icons in the header */
+        .header-icons {
             display: flex;
-            flex-direction: column; /* Stack name and text vertically */
+        }
+
+        /* Add some margin between the icons */
+        .header-icons i {
+            margin-left: 20px;
+        }
+
+        .main-panel-job-top {
+            margin-top: 100px; /* Add some space between the header and list panel */
+        }
+        .main-panel-job-bottom {
+            margin-bottom: 100px; /* Add some space between the header and list panel */
+        }
+
+        .list-panel {
+            margin-top: 20px; /* Add some space between the header and list panel */
+            background-color: #f5f5f5; /* Set the background color */
+            padding: 20px; /* Add padding to the panel */
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Your page content goes here -->
-</div>
 
-<div class="header-panel">
-    <div class="profile-container">
-        <div class="profile-picture">
-            <img src="../assets/a6.svg" alt="Profile Image">
+
+    <div class="header-panel">
+        <div class="left-text">
+            <img src="../assets/a3.svg" style="width: 35px;">
+            Genesyss
         </div>
-        <div class="profile-info">
-            <span>Uzumaki Bayu Juangga</span>
-            <span>Fullstack Karyawan</span>
+        <div class="left-text">
+            
+        </div>
+        <div class="header-icons">
+            <!-- Right icons -->
+            <a href="#" style="color: #ffffff;">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="#" style="color: #ffffff;">
+                <i class="fas fa-envelope"></i>    
+            </a>
+             
         </div>
     </div>
-    <div class="icons">
-        <i class="fas fa-search"></i> <!-- Icon 1 -->
-        <i class="fas fa-bell"></i> <!-- Icon 2 -->
-        <i class="fas fa-cog"></i> <!-- Icon 3 -->
+    
+
+
+
+    <div class="container">
+        <div class="main-panel-job-top">
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+            <div class="list-panel">
+                <!-- Your content for the list panel here -->
+                <h2>List Panel Content</h2>
+                <p>This is your list panel content.</p>
+            </div>
+        </div>
+        <div class="main-panel-job-bottom"></div>
     </div>
+
+<div class="buttom-panel">
+    <a class="nav-link warnatextmenu" href="#">
+        <i class="fas fa-home"></i> 
+        Home
+    </a>
+    <a class="nav-link warnatextmenu" href="#">
+        <i class="fas fa-search"></i> 
+        Search
+    </a>
+    <a class="nav-link warnatextmenu" href="#">
+        <i class="fas fa-chart-line"></i> 
+        Status
+    </a>
+    <a class="nav-link warnatextmenu" href="#">
+        <i class="fas fa-bookmark"></i> 
+        Saved
+    </a>
+    <a class="nav-link warnatextmenu" href="#">
+        <i class="fas fa-user"></i> 
+        Profile
+    </a>
 </div>
 
-<!-- Fixed Bottom Navbar -->
-<nav class="navbar fixed-bottom-navbar">
+<!-- <nav class="navbar fixed-bottom-navbar">
     <ul class="horizontal-menu">
       <li class="horizontal-menu-item">
         <a class="nav-link warnatextmenu" href="#">
-            <i class="fas fa-home"></i> <!-- Icon -->
+            <i class="fas fa-home"></i> 
             Home
         </a>
       </li>
       <li class="horizontal-menu-item">
         <a class="nav-link warnatextmenu" href="#">
-            <i class="fas fa-search"></i> <!-- Icon -->
+            <i class="fas fa-search"></i> 
             Search
         </a>
       </li>
       <li class="horizontal-menu-item">
         <a class="nav-link warnatextmenu" href="#">
-            <i class="fas fa-chart-line"></i> <!-- Icon -->
+            <i class="fas fa-chart-line"></i> 
             Status
         </a>
       </li>
       <li class="horizontal-menu-item">
         <a class="nav-link warnatextmenu" href="#">
-            <i class="fas fa-bookmark"></i> <!-- Icon -->
+            <i class="fas fa-bookmark"></i> 
             Saved
         </a>
       </li>
       <li class="horizontal-menu-item">
         <a class="nav-link warnatextmenu" href="#">
-            <i class="fas fa-user"></i> <!-- Icon -->
+            <i class="fas fa-user"></i> 
             Profile
         </a>
       </li>
     </ul>
-</nav>
+</nav> -->
 
 </body>
 </html>
