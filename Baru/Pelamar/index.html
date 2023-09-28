@@ -1,95 +1,139 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Genesyss</title>
-        <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-        <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
-        <script src="../boostrap/js/bootstrap.min.js"></script>
-        <style>
-        .centered-image {
-        margin-top: 40px;
-    }
-    .centered-text {
-        margin-top: 20px;
-        font-family: Roboto-Bold;
-        color: #38AA93;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    @media (max-width: 576px) {
-        .custom-col-sm-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        .card {
-            width: 180px;
-        }
-    }
-    .card {
-        width: 250px;
-    }
-    .center-card {
-        display: flex;
-        justify-content: center;
-    }
-
-    .fixed-bottom-navbar {
-            background-color: #333; /* Change the background color as needed */
-            color: #fff; /* Change the text color as needed */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesyss</title>
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
+    <script src="../boostrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Style for the fixed bottom navbar */
+        .fixed-bottom-navbar {
             position: fixed;
             bottom: 0;
-            width: 100%;
-            z-index: 1000; /* Adjust the z-index as needed */
+            left: 0;
+            right: 0;
+            background-color: #38AA93; /* Change the background color as needed */
+            color: #ffffff; /* Change the text color as needed */
+            padding: 10px; /* Add padding to adjust the height */
+            justify-content: center;
         }
 
-        /* Center the icon and text horizontally and vertically */
-        .fixed-bottom-navbar .navbar-text {
+        /* Style for the horizontal menu */
+        .horizontal-menu {
             display: flex;
-            align-items: center;
+            justify-content: center; /* Center-align the menu items horizontally */
+            list-style: none;
+            padding: 0;
+            margin: 0; /* Remove margin for the list */
         }
 
-        /* Add some padding to the icon */
-        .fixed-bottom-navbar .navbar-text i {
-            margin-right: 5px; /* Adjust the margin as needed */
+        /* Style for the horizontal menu items */
+        .horizontal-menu-item {
+            margin: 0;
         }
-        </style>
-    </head>
-    <body>
-      <nav class="navbar fixed-bottom fixed-bottom-navbar">
-    <div class="container">
-        <div class="navbar-nav">
-            <span class="nav-item navbar-text">
-                <i class="fas fa-home fa-2x"></i> <!-- Replace with your desired icon -->
-                Home
-            </span>
-            <span class="nav-item navbar-text">
-                <i class="fas fa-search fa-2x"></i> <!-- Replace with your desired icon -->
-                Search
-            </span>
-            <span class="nav-item navbar-text">
-                <i class="fas fa-clock fa-2x"></i> <!-- Replace with your desired icon -->
-                Status
-            </span>
-            <span class="nav-item navbar-text">
-                <i class="fas fa-bookmark fa-2x"></i> <!-- Replace with your desired icon -->
-                Saved
-            </span>
-            <span class="nav-item navbar-text">
-                <i class="fas fa-user fa-2x"></i> <!-- Replace with your desired icon -->
-                Profile
-            </span>
+
+        .warnatextmenu {
+            color: #ffffff;
+            text-align: center; /* Center-align the text */
+        }
+
+        .header-panel {
+            background-color: #38AA93; /* Change the background color as needed */
+            color: #ffffff; /* Change the text color as needed */
+            padding: 20px; /* Increase padding to make header panel bigger */
+            display: flex;
+            align-items: center; /* Vertically center-align content */
+            justify-content: space-between; /* Space between profile and icons */
+        }
+
+        /* Style for the circular profile picture container */
+        .profile-container {
+            display: flex;
+            align-items: center; /* Vertically center-align content */
+        }
+
+        /* Style for the circular profile picture */
+        .profile-picture {
+            width: 70px; /* Set the width and height of the circle */
+            height: 70px;
+            border-radius: 50%; /* Create a circular shape */
+            overflow: hidden; /* Clip the image to the circular frame */
+            margin-right: 20px; /* Add margin to separate from text */
+        }
+
+        .profile-picture img {
+            width: 100%; /* Make the image fill the circular frame */
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio while covering the frame */
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column; /* Stack name and text vertically */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Your page content goes here -->
+</div>
+
+<div class="header-panel">
+    <div class="profile-container">
+        <div class="profile-picture">
+            <img src="../assets/a6.svg" alt="Profile Image">
+        </div>
+        <div class="profile-info">
+            <span>Uzumaki Bayu Juangga</span>
+            <span>Fullstack Karyawan</span>
         </div>
     </div>
+    <div class="icons">
+        <i class="fas fa-search"></i> <!-- Icon 1 -->
+        <i class="fas fa-bell"></i> <!-- Icon 2 -->
+        <i class="fas fa-cog"></i> <!-- Icon 3 -->
+    </div>
+</div>
+
+<!-- Fixed Bottom Navbar -->
+<nav class="navbar fixed-bottom-navbar">
+    <ul class="horizontal-menu">
+      <li class="horizontal-menu-item">
+        <a class="nav-link warnatextmenu" href="#">
+            <i class="fas fa-home"></i> <!-- Icon -->
+            Home
+        </a>
+      </li>
+      <li class="horizontal-menu-item">
+        <a class="nav-link warnatextmenu" href="#">
+            <i class="fas fa-search"></i> <!-- Icon -->
+            Search
+        </a>
+      </li>
+      <li class="horizontal-menu-item">
+        <a class="nav-link warnatextmenu" href="#">
+            <i class="fas fa-chart-line"></i> <!-- Icon -->
+            Status
+        </a>
+      </li>
+      <li class="horizontal-menu-item">
+        <a class="nav-link warnatextmenu" href="#">
+            <i class="fas fa-bookmark"></i> <!-- Icon -->
+            Saved
+        </a>
+      </li>
+      <li class="horizontal-menu-item">
+        <a class="nav-link warnatextmenu" href="#">
+            <i class="fas fa-user"></i> <!-- Icon -->
+            Profile
+        </a>
+      </li>
+    </ul>
 </nav>
 
-  <div class="container">
-        <!-- Your page content goes here -->
-    </div>
-
-
-
-    </body>
-    </html>
+</body>
+</html>
