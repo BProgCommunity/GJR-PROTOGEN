@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Genesyss</title>
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
+    <script src="../boostrap/js/bootstrap.min.js"></script>
+    <style>
+        .navmobile{
+            display: none; 
+        }
+        .navweb{
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .navmobile{
+                display: flex; 
+            }
+            .navweb{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navweb">
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Fixed top 1</a>
+            </div>
+          </nav>
+    </div>
+    <div class="navmobile">
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Fixed top 2</a>
+            </div>
+          </nav>
+    </div>
+    
+    
+      <!-- Page Content -->
+      <div class="container">
+        <h1>Main Content Goes Here</h1>
+        <p>This is the main content of your page.</p>
+      </div>
+    
+      <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Fixed bottom</a>
+        </div>
+      </nav>
+</body>
+</html>
