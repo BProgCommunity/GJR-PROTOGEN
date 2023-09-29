@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Genesyss</title>
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../boostrap/index.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
+    <script src="../boostrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Style for the fixed bottom navbar */
+        a {
+            text-decoration: none;
+        }
+        .buttom-panel {
+            display: none; 
+        }
+
+        .header-panel-2 {
+            display: none; 
+        }
+
+        .header-panel-1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Style for left text in the header */
+        .left-text {
+            margin-right: auto; /* Push the text to the left */
+        }
+
+        /* Style for the icons in the header */
+        .header-icons {
+            display: flex;
+        }
+
+        /* Add some margin between the icons */
+        .header-icons i {
+            margin-left: 20px;
+        }
+        @media (max-width: 768px) {
+            /* Style for the navbar on smaller screens (bottom position) */
+            .buttom-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .header-panel-2 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: #38AA93;
+                color: #ffffff;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        }
+        .header-panel-1 {
+        display: none;
+        }
+        .main-panel-job-top.mobile-margin {
+                margin-top: 70px; /* Add some space between the header and list panel on smaller screens */
+        }
+        }
+        
+
+        .warnatextmenu {
+            color: #ffffff;
+            text-align: center; /* Center-align the text */
+        }
+
+        /* Style for the header panel */
+        
+
+        .main-panel-job-top {
+            margin-top: 100px; /* Add some space between the header and list panel */
+        }
+        .main-panel-job-bottom {
+            margin-bottom: 100px; /* Add some space between the header and list panel */
+        }
+
+        
+        .received-message {
+            background-color: #f2f2f2; /* Light gray background */
+            margin-left: 20px; /* Add a margin to distinguish received messages */
+            margin-bottom: 10px; /* Add space between received messages */
+        }
+
+        /* Style for sent messages */
+        .sent-message {
+            background-color: #38AA93; /* Your preferred color for sent messages */
+            color: #fff; /* Text color for sent messages */
+            margin-right: 20px; /* Add a margin to distinguish sent messages */
+            text-align: right; /* Right-align sent messages */
+            margin-bottom: 10px; /* Add space between sent messages */
+        }
+
+        /* Style for message content */
+        .message-content {
+            padding: 10px;
+        }
+
+        /* Style for message sender */
+        .message-sender {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Style for message title */
+        .message-title {
+            font-size: 16px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+
+
+    <div class="header-panel-2">
+        
+        <div class="text-center">
+            <div class="font-weight-bold"> PT Google Indonesia</div>
+             
+        </div>
+    </div>
+
+    <div class="header-panel-1">
+        <div class="left-text">
+            <img src="../assets/a3.svg" style="width: 35px;">
+            Genesyss
+        </div>
+        <a class="nav-link warnatextmenu" href="index.html">
+            <i class="fas fa-home"></i> 
+            Home
+        </a>
+        <a class="nav-link warnatextmenu" href="search.html">
+            <i class="fas fa-search"></i> 
+            Search
+        </a>
+        <a class="nav-link warnatextmenu" href="status.html">
+            <i class="fas fa-chart-line"></i> 
+            Status
+        </a>
+        <a class="nav-link warnatextmenu" href="saved.html">
+            <i class="fas fa-bookmark"></i> 
+            Saved
+        </a>
+        <a class="nav-link warnatextmenu" href="profile.html">
+            <i class="fas fa-user"></i> 
+            Profile
+        </a>
+        <div class="header-icons">
+            <!-- Right icons -->
+            <a href="#" style="color: #ffffff;">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="#" style="color: #ffffff;">
+                <i class="fas fa-envelope"></i>    
+            </a>
+             
+        </div>
+    </div>
+    
+    <div class="buttom-panel">
+        <a class="nav-link warnatextmenu" href="index.html">
+            <i class="fas fa-home"></i> 
+            Home
+        </a>
+        <a class="nav-link warnatextmenu" href="search.html">
+            <i class="fas fa-search"></i> 
+            Search
+        </a>
+        <a class="nav-link warnatextmenu" href="status.html">
+            <i class="fas fa-chart-line"></i> 
+            Status
+        </a>
+        <a class="nav-link warnatextmenu" href="saved.html">
+            <i class="fas fa-bookmark"></i> 
+            Saved
+        </a>
+        <a class="nav-link warnatextmenu" href="profile.html">
+            <i class="fas fa-user"></i> 
+            Profile
+        </a>
+    </div>
+
+    
+
+    <div class="container">
+        <div class="main-panel-job-top mobile-margin"></div>
+        <div class="row">
+            <!-- Received message example -->
+            <div class="col-12">
+                <div class="received-message">
+                    <div class="message-content">
+                        <div class="message-title">Apakah Bio Anda Sudah Sesuai?</div>
+                        <div class="message-sender">From: PT Google Indonesia</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sent message example -->
+            <div class="col-12">
+                <div class="sent-message">
+                    <div class="message-content">
+                        <div class="message-title">Terima kasih, sudah sesuai!</div>
+                        <div class="message-sender">To: PT Google Indonesia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-panel-job-bottom"></div>
+    </div>
+
+
+
+
+</body>
+</html>

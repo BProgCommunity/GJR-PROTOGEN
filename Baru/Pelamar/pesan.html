@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>Genesyss</title>
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../boostrap/index.css">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/Roboto-Bold.ttf" type="font/ttf">
+    <script src="../boostrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Style for the fixed bottom navbar */
+        a {
+            text-decoration: none;
+        }
+        .buttom-panel {
+            display: none; 
+        }
+
+        .header-panel-2 {
+            display: none; 
+        }
+
+        .header-panel-1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Style for left text in the header */
+        .left-text {
+            margin-right: auto; /* Push the text to the left */
+        }
+
+        /* Style for the icons in the header */
+        .header-icons {
+            display: flex;
+        }
+
+        /* Add some margin between the icons */
+        .header-icons i {
+            margin-left: 20px;
+        }
+        @media (max-width: 768px) {
+            /* Style for the navbar on smaller screens (bottom position) */
+            .buttom-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .header-panel-2 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: #38AA93;
+                color: #ffffff;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        }
+        .header-panel-1 {
+        display: none;
+        }
+        .main-panel-job-top.mobile-margin {
+                margin-top: 50px; /* Add some space between the header and list panel on smaller screens */
+        }
+        }
+        
+
+        .warnatextmenu {
+            color: #ffffff;
+            text-align: center; /* Center-align the text */
+        }
+
+        /* Style for the header panel */
+        
+
+        .main-panel-job-top {
+            margin-top: 100px; /* Add some space between the header and list panel */
+        }
+        .main-panel-job-bottom {
+            margin-bottom: 100px; /* Add some space between the header and list panel */
+        }
+
+        
+        .message-list {
+            margin-top: 20px;
+        }
+
+        .message-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .message-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #38AA93;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .message-sender {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="header-panel-2">
+        
+        <div class="text-center">
+            <div class="font-weight-bold"> Pesan</div>
+             
+        </div>
+    </div>
+
+    <div class="header-panel-1">
+        <div class="left-text">
+            <img src="../assets/a3.svg" style="width: 35px;">
+            Genesyss
+        </div>
+        <a class="nav-link warnatextmenu" href="index.html">
+            <i class="fas fa-home"></i> 
+            Home
+        </a>
+        <a class="nav-link warnatextmenu" href="search.html">
+            <i class="fas fa-search"></i> 
+            Search
+        </a>
+        <a class="nav-link warnatextmenu" href="status.html">
+            <i class="fas fa-chart-line"></i> 
+            Status
+        </a>
+        <a class="nav-link warnatextmenu" href="saved.html">
+            <i class="fas fa-bookmark"></i> 
+            Saved
+        </a>
+        <a class="nav-link warnatextmenu" href="profile.html">
+            <i class="fas fa-user"></i> 
+            Profile
+        </a>
+        <div class="header-icons">
+            <!-- Right icons -->
+            <a href="#" style="color: #ffffff;">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="#" style="color: #ffffff;">
+                <i class="fas fa-envelope"></i>    
+            </a>
+             
+        </div>
+    </div>
+    
+    <div class="buttom-panel">
+        <a class="nav-link warnatextmenu" href="index.html">
+            <i class="fas fa-home"></i> 
+            Home
+        </a>
+        <a class="nav-link warnatextmenu" href="search.html">
+            <i class="fas fa-search"></i> 
+            Search
+        </a>
+        <a class="nav-link warnatextmenu" href="status.html">
+            <i class="fas fa-chart-line"></i> 
+            Status
+        </a>
+        <a class="nav-link warnatextmenu" href="saved.html">
+            <i class="fas fa-bookmark"></i> 
+            Saved
+        </a>
+        <a class="nav-link warnatextmenu" href="profile.html">
+            <i class="fas fa-user"></i> 
+            Profile
+        </a>
+    </div>
+
+    
+
+    <div class="container">
+        <div class="main-panel-job-top mobile-margin"></div>
+        <div class="row">
+            
+            <div class="message-list">
+                <a href="pesandetail.html"> <!-- Add your URL here -->
+                    <div class="message-item">
+                        <div class="message-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="message-content" style="color: black;">
+                            <div class="message-title">Apakah Bio Anda Sudah Sesuai?</div>
+                            <div class="message-sender">From: PT Google Indonesia</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Message Item 2 -->
+                <a href="pesandetail.html" style="color: black;"> <!-- Add another URL here -->
+                    <div class="message-item">
+                        <div class="message-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="message-content" style="color: black;">
+                            <div class="message-title">Penawaran Gaji</div>
+                            <div class="message-sender">From: PT. Maju Mundur Kena</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        <div class="main-panel-job-bottom"></div>
+    </div>
+
+
+
+
+
+</body>
+</html>
