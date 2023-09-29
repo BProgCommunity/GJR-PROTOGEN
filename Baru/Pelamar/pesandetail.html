@@ -133,8 +133,51 @@
             font-size: 16px;
         }
 
+        /* Style for chat input */
+        .chat-input {
+            margin-top: 20px;
+        }
+
+        /* Style for chat button */
+        .send-button {
+            background-color: #38AA93; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
         
     </style>
+    <script>
+        function sendMessage() {
+            // Get the message content from the input field
+            const messageContent = document.getElementById('chat-message').value;
+
+            // Create a new sent message element and append it to the message display
+            const sentMessageElement = document.createElement('div');
+            sentMessageElement.classList.add('sent-message');
+            sentMessageElement.innerHTML = `
+                <div class="message-content">
+                    <div class="message-title">${messageContent}</div>
+                    
+                </div>
+            `;
+
+            // Append the sent message to the message display
+            document.querySelector('.row.chat-input').before(sentMessageElement);
+
+            // Clear the input field after sending the message
+            document.getElementById('chat-message').value = '';
+        }
+
+        function handleKeyPress(event) {
+            // Check if the Enter key (key code 13) was pressed
+            if (event.keyCode === 13) {
+                sendMessage(); // Call the sendMessage function
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -178,7 +221,7 @@
             <a href="#" style="color: #ffffff;">
                 <i class="fa-solid fa-graduation-cap"></i>
             </a>
-            <a href="#" style="color: #ffffff;">
+            <a href="pesan.html" style="color: #ffffff;">
                 <i class="fas fa-envelope"></i>    
             </a>
              
@@ -210,7 +253,7 @@
 
     
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="main-panel-job-top mobile-margin"></div>
         <div class="row">
             <!-- Received message example -->
@@ -218,7 +261,6 @@
                 <div class="received-message">
                     <div class="message-content">
                         <div class="message-title">Apakah Bio Anda Sudah Sesuai?</div>
-                        <div class="message-sender">From: PT Google Indonesia</div>
                     </div>
                 </div>
             </div>
@@ -228,11 +270,21 @@
                 <div class="sent-message">
                     <div class="message-content">
                         <div class="message-title">Terima kasih, sudah sesuai!</div>
-                        <div class="message-sender">To: PT Google Indonesia</div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="row chat-input">
+            <div class="col-8">
+                <input type="text" id="chat-message" class="form-control" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            </div>
+            <div class="col-4">
+                <button class="send-button btn btn-primary btn-block" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
         <div class="main-panel-job-bottom"></div>
     </div>
 
