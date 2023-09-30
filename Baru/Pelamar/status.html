@@ -177,6 +177,37 @@
                 });
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const legendIcons = document.querySelectorAll(".legend-icon");
+        let activeLegend = null; // To track the currently active legend
+        
+        legendIcons.forEach(function (icon) {
+            icon.addEventListener("click", function () {
+                const legendText = icon.nextElementSibling; // Get the next sibling (the legend text)
+                
+                if (legendText.style.display === "none" || legendText !== activeLegend) {
+                    // Hide the currently active legend
+                    if (activeLegend) {
+                        activeLegend.style.display = "none";
+                    }
+
+                    // Show the clicked legend
+                    legendText.style.display = "block";
+                    activeLegend = legendText;
+
+                    // Set a timeout to hide the legend after 5 seconds
+                    setTimeout(function () {
+                        legendText.style.display = "none";
+                    }, 3000);
+                } else {
+                    // Clicking the same legend again hides it
+                    legendText.style.display = "none";
+                    activeLegend = null;
+                }
+            });
+        });
+    });
     </script>
 </head>
 <body>
@@ -273,6 +304,14 @@
                             <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
                             <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
                             <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+
+                            <!-- Icon to toggle legend -->
+                            <i class="fas fa-info-circle legend-icon position-absolute top-0 start-0 p-2" style="color: #007bff; cursor: pointer;"></i>
+                            
+                            <!-- Text legend (initially hidden) -->
+                            <div class="legend-text position-absolute top-0 start-0 p-2 bg-white rounded" style="display: none; font-size: 10px;">
+                                Skill anda sesuai dengan yang kami cari
+                            </div>
                         </div>
                         <div class="card-footer">
                             <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
@@ -293,6 +332,13 @@
                             <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
                             <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
                             <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            <!-- Icon to toggle legend -->
+                            <i class="fas fa-info-circle legend-icon position-absolute top-0 start-0 p-2" style="color: #007bff; cursor: pointer;"></i>
+                            
+                            <!-- Text legend (initially hidden) -->
+                            <div class="legend-text position-absolute top-0 start-0 p-2 bg-white rounded" style="display: none; font-size: 10px;">
+                                Skill anda belum sesuai dengan yang kami cari
+                            </div>
                         </div>
                         <div class="card-footer">
                             <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
@@ -313,6 +359,13 @@
                             <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
                             <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
                             <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            <!-- Icon to toggle legend -->
+                            <i class="fas fa-info-circle legend-icon position-absolute top-0 start-0 p-2" style="color: #007bff; cursor: pointer;"></i>
+                            
+                            <!-- Text legend (initially hidden) -->
+                            <div class="legend-text position-absolute top-0 start-0 p-2 bg-white rounded" style="display: none; font-size: 10px;">
+                                Lamaran Anda Sedang Kami Review
+                            </div>
                         </div>
                         <div class="card-footer">
                             <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
