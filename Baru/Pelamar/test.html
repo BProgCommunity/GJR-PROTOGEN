@@ -12,9 +12,6 @@
     <script src="../boostrap/js/bootstrap.min.js"></script>
     <style>
         /* Style for the fixed bottom navbar */
-        a {
-            text-decoration: none;
-        }
         .buttom-panel {
             display: none; 
         }
@@ -36,13 +33,6 @@
             justify-content: space-between;
         }
 
-        .header-panel-1,
-        .header-panel-2,
-        .buttom-panel {
-            position: relative;
-            z-index: 2;
-        }
-
         /* Style for left text in the header */
         .left-text {
             margin-right: auto; /* Push the text to the left */
@@ -57,7 +47,21 @@
         .header-icons i {
             margin-left: 20px;
         }
+        
+        .sticky-navigation {
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Menentukan z-index sesuai kebutuhan */
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
         @media (max-width: 768px) {
+            
             /* Style for the navbar on smaller screens (bottom position) */
             .buttom-panel {
             position: fixed;
@@ -84,12 +88,13 @@
                 align-items: center;
                 justify-content: space-between;
         }
-        .header-panel-1 {
-        display: none;
+            .header-panel-1 {
+                display: none;
         }
-        .main-panel-job-top.mobile-margin {
-                margin-top: 90px; /* Add some space between the header and list panel on smaller screens */
+            .main-panel-job-top.mobile-margin {
+                margin-top: 0px; /* Add some space between the header and list panel on smaller screens */
         }
+            
         }
         
 
@@ -102,7 +107,7 @@
         
 
         .main-panel-job-top {
-            margin-top: 20px; /* Add some space between the header and list panel */
+            margin-top: 79px; /* Add some space between the header and list panel */
         }
         .main-panel-job-bottom {
             margin-bottom: 100px; /* Add some space between the header and list panel */
@@ -111,87 +116,51 @@
         
 
 
-        .panel-kategori-pekerjaan{
-            padding: 16px;
-            gap: 16px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-        .judul-panel{
-            font-size: 15px;
-            line-height: 22px;
-            color: rgb(20, 42, 91);
-            margin: 0px;
-        }
-        .card-pekerjaan{
-            gap: 8px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .url-pekerjaan-kategori{
-            text-decoration: none;
-            font-size: 10px;
-            line-height: 12px;
+        .profile-panel {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background-color: rgb(255, 255, 255);
-            box-shadow: rgba(20, 42, 91, 0.04) 0px 2px 2px;
-            border-radius: 8px;
-            -webkit-box-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            align-items: center;
-            height: 80px;
-            color: rgb(61, 78, 117);
-            cursor: pointer;
-        }
-        .favorite-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #ccc; /* Default color for unfilled icon */
-        }
-        .favorite-button i {
-            transform: rotate(45deg);
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 0; /* Remove border radius for full-width */
+            background-color: #38AA93;
         }
 
-        .favorite-button.favorite {
-            color: red; /* Color for filled icon */
+        /* Style for the white circular border */
+        .profile-image-container {
+            width: 100px;
+            height: 100px;
+            border: 3px solid white;
+            border-radius: 50%;
+            overflow: hidden; /* Hide any image overflow */
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Make the image fill the container */
+        }
+
+        /* Style for the edit icon */
+        .edit-icon {
+            font-size: 18px;
+            margin-left: 5px;
+            color: #007bff; /* Change color to match your design */
+        }
+        
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const favoriteButtons = document.querySelectorAll(".favorite-button");
-    
-            favoriteButtons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    // Toggle the "favorite" class on the button
-                    button.classList.toggle("favorite");
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-
-
-
-    <div class="header-panel-2">
-        
-        <div class="text-center">
-            <div class="font-weight-bold"> Saved</div>
-             
-        </div>
-    </div>
-
-    <div class="header-panel-1">
+    <!-- Navigation Web -->
+    <div class="header-panel-1 sticky-navigation">
         <div class="left-text">
             <img src="../assets/a3.svg" style="width: 35px;">
             Genesyss
@@ -227,7 +196,9 @@
              
         </div>
     </div>
+    <!-- Navigation Web  -->
     
+    <!-- Navigation Mobile  -->
     <div class="buttom-panel">
         <a class="nav-link warnatextmenu" href="index.html">
             <i class="fas fa-home"></i> 
@@ -250,154 +221,137 @@
             Profile
         </a>
     </div>
+    <!-- Navigation Mobile  -->
 
-    
-
-    <div class="container">
-        <div class="main-panel-job-top mobile-margin"></div>
+    <div class="main-panel-job-top mobile-margin"></div>
         
-        <div class="container mt-5">
-            <h2>Pekerjaan Yang Tersimpan</h2>
-            <div class="row">
-                
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
+    <div class="container-fluid p-0">
+        <div class="col-md-12">
+            <div class="profile-panel">
+                <div class="profile-image-container">
+                    <img src="../assets/a5.svg" alt="Profile Image" class="profile-image">
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <a href="#"></a>
-                    <div class="card">
-                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        <div class="favorite-button favorite">
-                            <i class="fas fa-thumbtack"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
-                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
-                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
-                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-
-                
-
-                
-                
-
-                
-        
-                
-        
-                
+                <h3 style="color: #ffffff;">Marteen Juangga</h3>
+                <br>
+                <p style="color: #ffffff;">Marteen.Juanga@Gmail.Com</p> 
+                <p style="color: #ffffff;">29 Febuari 1945</p> 
             </div>
         </div>
-        <div class="main-panel-job-bottom"></div>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Tentang</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body">
+                Hi Saya Marteen, saya berpengalaman sebagai Senior Developer Selama 10 Tahun, Spesialisasi saya adalah pada bidang mobile developer, saya sangat menyukai tantangan dan perkembangan teknologi, sebuah kebanggaan jika bisa mendedikasikan skill yang saya miliki untuk perkembangan teknologi.
+            </div>
+        </div>
+
+        <!-- Card 2: Skill -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Skill</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body"> <!-- Skill Cards -->
+                <div class="row">
+                    <!-- Skill Card 1: C# -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted">C#</h6>
+                                </div>
+                                <div>
+                                    <span class="badge bg-success">Profesional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card 2: MAUI -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted">MAUI</h6>
+                                </div>
+                                <div>
+                                    <span class="badge bg-success">Kompeten</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Skill Card 3: Azure -->
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted">Azure</h6>
+                                </div>
+                                <div>
+                                    <span class="badge bg-success">Pemula</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Sertifikat -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Sertifikat</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body">
+                <p>Sertifikasi Microsoft Certified: Azure Developer Associate (AZ-204)</p>
+                <p>Sertifikasi Microsoft Certified: App Builder Associate (AZ-220)</p>
+                <p>Sertifikasi Microsoft Certified: C# Specialist</p>
+                <p>Sertifikasi Maui Certified Developer</p>
+            </div>
+        </div>
+
+        <!-- Card 4: Pendidikan -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Pendidikan</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body">
+                <p>Bprog Academy</p>
+                <p>Sarjana, Teknik Informatika</p>
+                <p>2018 - 2022</p>
+            </div>
+        </div>
+
+        <!-- Card 5: Pengalaman -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Pengalaman</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body">
+                <p>Senior Developer at Bukanprogrammer.com</p>
+                <p>2022 - 2023</p>
+            </div>
+        </div>
+
+        <!-- Card 6: Portofolio -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Portofolio</h5>
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="card-body">
+                Job Portal Mobile Application At Bukanprogrammer.com 
+            </div>
+        </div>
     </div>
-
-
-
-
-
+    
+    <div class="main-panel-job-bottom"></div>
 </body>
 </html>
