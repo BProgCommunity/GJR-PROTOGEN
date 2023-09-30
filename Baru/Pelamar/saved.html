@@ -12,6 +12,9 @@
     <script src="../boostrap/js/bootstrap.min.js"></script>
     <style>
         /* Style for the fixed bottom navbar */
+        a {
+            text-decoration: none;
+        }
         .buttom-panel {
             display: none; 
         }
@@ -31,6 +34,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .header-panel-1,
+        .header-panel-2,
+        .buttom-panel {
+            position: relative;
+            z-index: 2;
         }
 
         /* Style for left text in the header */
@@ -77,6 +87,9 @@
         .header-panel-1 {
         display: none;
         }
+        .main-panel-job-top.mobile-margin {
+                margin-top: 90px; /* Add some space between the header and list panel on smaller screens */
+        }
         }
         
 
@@ -89,7 +102,7 @@
         
 
         .main-panel-job-top {
-            margin-top: 100px; /* Add some space between the header and list panel */
+            margin-top: 20px; /* Add some space between the header and list panel */
         }
         .main-panel-job-bottom {
             margin-bottom: 100px; /* Add some space between the header and list panel */
@@ -98,52 +111,73 @@
         
 
 
-        .job-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .left-content {
-            flex: 1;
-        }
-        .title {
-            font-size: 20px;
-            color: green;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .pinned-icon {
-            color: red; /* Filled with red when clicked */
-        }
-        .company-info {
+        .panel-kategori-pekerjaan{
+            padding: 16px;
+            gap: 16px;
             display: flex;
             flex-direction: column;
+            position: relative;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
         }
-        .company-name {
-            font-weight: bold;
-            margin-bottom: 5px;
+        .judul-panel{
+            font-size: 15px;
+            line-height: 22px;
+            color: rgb(20, 42, 91);
+            margin: 0px;
         }
-        .status {
-            font-size: 14px;
-            color: #ff5733; /* Your desired color */
+        .card-pekerjaan{
+            gap: 8px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
-        .date {
-            margin-top: 5px;
+        .url-pekerjaan-kategori{
+            text-decoration: none;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(20, 42, 91, 0.04) 0px 2px 2px;
+            border-radius: 8px;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 80px;
+            color: rgb(61, 78, 117);
+            cursor: pointer;
         }
-        .location {
-            margin-top: 5px;
+        .favorite-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ccc; /* Default color for unfilled icon */
         }
-        .price {
-            margin-top: 5px;
-            text-align: right;
+        .favorite-button i {
+            transform: rotate(45deg);
+        }
+
+        .favorite-button.favorite {
+            color: red; /* Color for filled icon */
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const favoriteButtons = document.querySelectorAll(".favorite-button");
+    
+            favoriteButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    // Toggle the "favorite" class on the button
+                    button.classList.toggle("favorite");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -220,77 +254,143 @@
     
 
     <div class="container">
-        <div class="main-panel-job-top"></div>
-        <div class="row">
-            
-            <div class="group85-container">
-                <div class="group85-group85">
-                  <div class="group85-group71">
-                    <div class="group85-system-analyst">
-                      <img
-                        src="../assets/rectangle8271-ugwf.svg"
-                        alt="Rectangle8271"
-                        class="group85-rectangle"
-                      />
+        <div class="main-panel-job-top mobile-margin"></div>
+        
+        <div class="container mt-5">
+            <h2>Pekerjaan Yang Tersimpan</h2>
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
                     </div>
-                  </div>
-                  <span class="group85-text"><span>Fullstack Developer</span></span>
-                  <span class="group85-text02"><span>Bukanprogrammer.com</span></span>
-                  <span class="group85-text04"><span>Outsource</span></span>
-                  <div class="group85-group26">
-                    <span class="group85-text06">
-                      <span>Rp 13.500.000 - 16.000.000</span>
-                    </span>
-                    <span class="group85-text08"><span>01/07/2023</span></span>
-                  </div>
-                  <div class="group85-group261">
-                    <span class="group85-text10">
-                      <span>Jakarta, Jakarta Raya, Indonesia</span>
-                    </span>
-                  </div>
-                  <img
-                    src="../assets/fluentmoney24regular8271-3rtc.svg"
-                    alt="fluentmoney24regular8271"
-                    class="group85-fluentmoney24regular"
-                  />
-                  <div class="group85-ggcalendar">
-                    <div class="group85-group">
-                      <img
-                        src="../assets/vector8271-3hjq.svg"
-                        alt="Vector8271"
-                        class="group85-vector"
-                      />
-                      <img
-                        src="../assets/vector8271-38d.svg"
-                        alt="Vector8271"
-                        class="group85-vector1"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="group85-streamlinetravelmaplocationpinnavigationmapmapspin"
-                  >
-                    <div class="group85-group1">
-                      <img
-                        src="../assets/vector8271-ywg8.svg"
-                        alt="Vector8271"
-                        class="group85-vector2"
-                      />
-                      <img
-                        src="../assets/vector8271-9ssb.svg"
-                        alt="Vector8271"
-                        class="group85-vector3"
-                      />
-                    </div>
-                  </div>
-                  <img
-                    src="../assets/solarpinbold8271-r37.svg"
-                    alt="solarpinbold8271"
-                    class="group85-solarpinbold"
-                  />
+                </a>
                 </div>
-              </div>     
-            
+
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <a href="#"></a>
+                    <div class="card">
+                        <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                        <div class="favorite-button favorite">
+                            <i class="fas fa-thumbtack"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                            <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                            <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                            <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                
+
+                
+                
+
+                
+        
+                
+        
+                
+            </div>
         </div>
         <div class="main-panel-job-bottom"></div>
     </div>

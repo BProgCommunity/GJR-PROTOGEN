@@ -12,6 +12,9 @@
     <script src="../boostrap/js/bootstrap.min.js"></script>
     <style>
         /* Style for the fixed bottom navbar */
+        a {
+            text-decoration: none;
+        }
         .buttom-panel {
             display: none; 
         }
@@ -31,6 +34,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .header-panel-1,
+        .header-panel-2,
+        .buttom-panel {
+            position: relative;
+            z-index: 2;
         }
 
         /* Style for left text in the header */
@@ -77,6 +87,9 @@
         .header-panel-1 {
         display: none;
         }
+        .main-panel-job-top.mobile-margin {
+                margin-top: 90px; /* Add some space between the header and list panel on smaller screens */
+        }
         }
         
 
@@ -89,7 +102,7 @@
         
 
         .main-panel-job-top {
-            margin-top: 100px; /* Add some space between the header and list panel */
+            margin-top: 20px; /* Add some space between the header and list panel */
         }
         .main-panel-job-bottom {
             margin-bottom: 100px; /* Add some space between the header and list panel */
@@ -138,7 +151,33 @@
             color: rgb(61, 78, 117);
             cursor: pointer;
         }
+        .favorite-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ccc; /* Default color for unfilled icon */
+        }
+        .favorite-button i {
+            transform: rotate(45deg);
+        }
+
+        .favorite-button.favorite {
+            color: red; /* Color for filled icon */
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const favoriteButtons = document.querySelectorAll(".favorite-button");
+    
+            favoriteButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    // Toggle the "favorite" class on the button
+                    button.classList.toggle("favorite");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -227,8 +266,8 @@
     
 
     <div class="container">
-        <div class="main-panel-job-top"></div>
-        <div>
+        <div class="main-panel-job-top mobile-margin"></div>
+        <div class="row">
             <div class="panel-kategori-pekerjaan">
                 <h2 class="judul-panel">Cari Berdasarkan Kategori</h2>
                 <div class="card-pekerjaan">
@@ -258,8 +297,136 @@
                     </a>
                 </div>
             </div>
+        </div>  
+
+        <div class="container mt-5">
+            <h2>Pekerjaan Rekomendasi Untukmu</h2>
+            <div class="row">
+                
+                
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <a href="#"></a>
+                        <div class="card">
+                            <img src="../assets/a3.svg" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="favorite-button">
+                                <i class="fas fa-thumbtack"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #38AA93;font-weight: bold;">Programmer</h5>
+                                <p class="card-text" style="color: black;"><strong>BukanProgrammer.com</strong> Outsource</p>
+                                <p class="card-text" style="color: black;"><i class="fa-solid fa-calendar" style="margin-right: 10px;"></i>  01/07/2023</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text" style="color: black;"> <i class="fa-solid fa-location-dot" style="color: #b51d1d;margin-right: 10px;"></i>  Jakarta, Jakarta Barat, Indonesia</p>
+                                <p class="card-text" style="color: black;"><i class="fas fa-money-bill-wave" style="margin-right: 10px;color: #38AA93"></i>RP. 20.000.000 - RP. 30.000.000</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                
+
+            </div>
         </div>
-        
         <div class="main-panel-job-bottom"></div>
     </div>
 
