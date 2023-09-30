@@ -50,27 +50,22 @@
         .header-icons i {
             margin-left: 20px;
         }
-        
         @media (max-width: 768px) {
             /* Style for the navbar on smaller screens (bottom position) */
             .buttom-panel {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: #38AA93;
-                color: #ffffff;
-                padding: 0px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #38AA93;
+            color: #ffffff;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
             .header-panel-2 {
-                display: none;
-            }
-
-            .header-panel-1 {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -81,42 +76,16 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-            }
-
-            .main-panel-job-top.mobile-margin {
-                margin-top: 70px;
-            }
-
-            /* Move chat input above the navbar */
-            .chat-input {
-                position: fixed;
-                bottom: 60px; /* Adjust this value as needed */
-                left: 0;
-                right: 0;
-                background-color: #ffffff;
-                padding: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                z-index: 999; /* Ensure it's above the navbar */
-            }
-
-            /* Adjust input and button size for mobile */
-            .chat-input .col-8 {
-                flex: 1;
-            }
-
-            .chat-input .col-4 {
-                flex: 0;
-                padding-left: 10px;
-            }
-
-            /* Style for chat input */
-            .chat-input input {
-                width: 100%;
-            }
+        }
+        .header-panel-1 {
+        display: none;
+        }
+        .main-panel-job-top.mobile-margin {
+                margin-top: 70px; /* Add some space between the header and list panel on smaller screens */
+        }
         }
         
+
         .warnatextmenu {
             color: #ffffff;
             text-align: center; /* Center-align the text */
@@ -132,6 +101,7 @@
             margin-bottom: 100px; /* Add some space between the header and list panel */
         }
 
+        
         .received-message {
             background-color: #f2f2f2; /* Light gray background */
             margin-left: 20px; /* Add a margin to distinguish received messages */
@@ -163,13 +133,6 @@
             font-size: 16px;
         }
 
-        .message-container {
-            margin-top: 20px; /* Atur jarak antara pesan dan elemen lainnya sesuai kebutuhan Anda */
-            overflow-y: auto; /* Tambahkan scrollbar vertikal jika kontennya melebihi container */
-            max-height: calc(100vh - 200px); /* Batasi tinggi container agar tidak melebihi tinggi viewport */
-        }
-
-
         /* Style for chat input */
         .chat-input {
             margin-top: 20px;
@@ -197,6 +160,7 @@
             sentMessageElement.innerHTML = `
                 <div class="message-content">
                     <div class="message-title">${messageContent}</div>
+                    
                 </div>
             `;
 
@@ -217,7 +181,10 @@
 </head>
 <body>
 
+
+
     <div class="header-panel-2">
+        
         <div class="text-center">
             <div class="font-weight-bold"> PT Google Indonesia</div>
              
@@ -284,11 +251,11 @@
         </a>
     </div>
 
+    
+
     <div class="container-fluid">
         <div class="main-panel-job-top mobile-margin"></div>
-    
-        <!-- Message container -->
-        <div class="message-container">
+        <div class="row">
             <!-- Received message example -->
             <div class="col-12">
                 <div class="received-message">
@@ -297,30 +264,32 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Sent message example -->
             <div class="col-12">
                 <div class="sent-message">
                     <div class="message-content">
                         <div class="message-title">Terima kasih, sudah sesuai!</div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    
+        
+        <div class="row chat-input">
+            <div class="col-8">
+                <input type="text" id="chat-message" class="form-control" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            </div>
+            <div class="col-4">
+                <button class="send-button btn btn-primary btn-block" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
         <div class="main-panel-job-bottom"></div>
     </div>
-    <!-- Footer chat input -->
-    <div class="row chat-input">
-        <div class="col-2">        
-        </div>
-        <div class="col-7">
-            <input type="text" id="chat-message" class="form-control" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-        </div>
-        <div class="col-2">
-            <button class="send-button btn btn-primary btn-block" onclick="sendMessage()">Send</button>
-        </div>
-    </div>
+
+
+
 
 </body>
 </html>
